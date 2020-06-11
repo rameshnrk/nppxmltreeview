@@ -190,6 +190,9 @@ namespace NppXmlTreeviewPlugin.Parsers
                 if(attr != null)
                     nodeName = attr;
             }
+            if(xmlTextReader.HasAttributes &&  !string.IsNullOrWhiteSpace (xmlTextReader["Name"] )){
+                nodeName = nodeName + "("+xmlTextReader["Name"] +")";
+            }
 
             node.Name = nodeName;
 
